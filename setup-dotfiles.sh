@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# Backup existing .bashrc
-if [ -f ~/.bashrc ]; then
-  cp ~/.bashrc ~/.bashrc.backup.$(date +%Y%m%d%H%M%S)
-fi
+echo "Backing up current .bashrc..."
+cp ~/.bashrc ~/.bashrc.backup.$(date +%Y%m%d%H%M%S)
 
-# Copy new .bashrc from repo folder to home
-cp ./my-dotfiles/.bashrc ~/.bashrc
+echo "Applying custom prompt..."
+cp .bashrc ~/.bashrc
 
-echo "Custom prompt installed! Please run 'source ~/.bashrc' to apply."
+echo "Done! Run 'source ~/.bashrc' to activate the new prompt."
